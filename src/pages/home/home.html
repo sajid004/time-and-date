@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-navbar>
+  <ion-buttons start>
+  <button ion-button icon-only>
+  <ion-icon name="person"></ion-icon>
+  </button>
+  </ion-buttons>
+  <ion-title>Home</ion-title>
+  <ion-buttons end>
+  <button ion-button icon-only>
+  <ion-icon name="more"></ion-icon>
+  </button>
+  </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+<label>User Name</label>
+  <input type="text" placeholder="User Name"><br><br>
+  <label>Password</label>&nbsp;&nbsp;
+  <input type="password" placeholder="Password"><br><br>
+  <div>
+  <h4>Select Gender</h4><br>
+  <input type="radio" name="radio">&nbsp;&nbsp;
+  <label>Male</label>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  <input type="radio" name="radio">&nbsp;&nbsp;
+  <label>FeMale</label>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+   </div>
+  <br>
+  <input type="text" placeholder="User id" size="24"><label stacked>@gmail.com</label><br><br>
+  <input type="password" placeholder="Optional email address"><br><br>
+  <br><br>
+   <ion-list>
+ <ion-item>
+ <ion-label>D-O-B</ion-label>
+ <ion-datetime displayFormate="MM DD YYY"[(ngModel)]="event.month"></ion-datetime>
+ </ion-item>
+ <ion-item>
+ <ion-label>Time</ion-label>
+ <ion-datetime displayFormate="h:mm A" pickerFormat="h mm P"[(ngModel)]="event.timeStarts"></ion-datetime>
+ </ion-item>
+ </ion-list>
+ <ion-list>
+  <ion-item>
+    <ion-label>Favourite Subject</ion-label>
+	<ion-select>
+      <ion-option value="nes">Mob. Application</ion-option>
+      <ion-option value="n64">HCI</ion-option>
+      <ion-option value="ps">Database</ion-option>
+    </ion-select>
+  </ion-item>
+</ion-list>
+ 
+   <input type="checkbox">
+   <label fixed>Licience and Agrement</label>
+   <br>
+  <button full color="danger" ion-button [navPush]="nextPage" (tap)="tapEvent($event)">Tapped:{{tap}} times </button>
+
+</ion-content>
